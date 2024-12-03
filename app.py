@@ -49,6 +49,9 @@ def predict():
         
         predict =scipy.stats.mode(np.argmax(model.predict((augmented_images),verbose=0),axis=1))[0]
 
+        # Delete the augmented images after prediction to free memory
+        del augmented_images
+
         # Return the prediction as JSON
         return jsonify({'prediction': int(predict)})
 
