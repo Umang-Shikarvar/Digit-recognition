@@ -2,3 +2,4 @@ flask
 tensorflow
 numpy
 scipy
+flask_cors
