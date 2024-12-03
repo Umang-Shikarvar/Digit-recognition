@@ -9,7 +9,7 @@ import scipy.stats
 app = Flask(__name__)
 
 # Enable CORS for all routes
-CORS(app)
+CORS(app, resources={r"/predict": {"origins": ["https://umang-shikarvar.github.io/Digit_Recognition/"]}})
 
 # Load your trained model
 model = load_model('digit_recognition.h5')  # Update with your actual model path
