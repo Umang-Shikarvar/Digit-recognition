@@ -6,8 +6,6 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from flask_cors import CORS
 import scipy.stats
 
-print(tf.__version__)
-
 app = Flask(__name__)
 
 # Enable CORS for all routes
@@ -59,4 +57,4 @@ def predict():
         return jsonify({'error': 'An error occurred during prediction'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
